@@ -1,0 +1,17 @@
+<%include partials/header%>
+
+<section id="main-section">
+    <div class="img-div">
+        <img src="images/tenor.gif" alt="cute cat">
+    </div>
+    <div class="courses-div">
+        <h1>Our Courses: </h1>
+        <% courses.forEach(course => { %>
+            <h3><%= course.title%></h3>
+            <span>$ <%= course.cost%></span>
+        <% }); %>
+    </div>
+
+</section>
+
+<%include partials/footer%>

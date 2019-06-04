@@ -1,0 +1,32 @@
+body {
+}
+
+.main-head {
+  margin-top: 1em;
+  border-bottom: 15px solid orange;
+  box-shadow: 5px 5px;
+}
+
+.main-head nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.main-head nav ul li {
+  margin-right: 1em;
+  list-style: none;
+}
+
+#logo-text {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: red;
+}
+
+#main-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
