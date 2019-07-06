@@ -12,6 +12,12 @@ mongoose.connect(
 );
 const db = mongoose.connection;
 
+db.once("open", () => {
+    console.log("Successfully connected to the DB from Mongoose!");
+});
+
+const Subscriber = require("./models/subscriber");
+
 // Application Settings
 
 app.set("view engine", "ejs");
