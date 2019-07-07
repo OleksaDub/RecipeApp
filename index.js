@@ -1,6 +1,7 @@
 const express = require("express"),
     app = express(),
     homeController = require('./controllers/homeController'),
+    subscribersController = require('./controllers/subscribersController'),
     path = require('path');
 
 // DataBase Settings and Connection
@@ -16,7 +17,6 @@ db.once("open", () => {
     console.log("Successfully connected to the DB from Mongoose!");
 });
 
-const Subscriber = require("./models/subscriber");
 
 // Application Settings
 
@@ -33,6 +33,11 @@ app.use(express.json());
 
 app.get('/', homeController.index);
 app.get('/courses', homeController.showCourses);
+app.get('/subscribers', subscribersController.getAllSubscribers,
+    (req, res, next) => {
+        console.log(req.data);
+        res.render( "subscribers" , {subscribers: req.data});
+    });
 app.get('/contacts', homeController.showSignUp);
 app.post('/contacts', homeController.postedSignUpForm);
 

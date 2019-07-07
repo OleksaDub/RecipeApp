@@ -1,0 +1,17 @@
+<%include partials/header%>
+
+<section id="main-section">
+    <div class="img-div">
+        <img src="images/tenor.gif" alt="cute cat">
+    </div>
+    <div class="subscribers-div">
+        <h1>Subscribers: </h1>
+        <% subscribers.forEach(subscriber => { %>
+            <h5><%= subscriber.name%></h5>
+            <span> <%= subscriber.email%></span>
+        <% }); %>
+    </div>
+
+</section>
+
+<%include partials/footer%>
