@@ -38,8 +38,10 @@ app.get('/subscribers', subscribersController.getAllSubscribers,
         console.log(req.data);
         res.render( "subscribers" , {subscribers: req.data});
     });
-app.get('/contacts', homeController.showSignUp);
-app.post('/contacts', homeController.postedSignUpForm);
+app.post('/subscribe', subscribersController.saveSubscriber);
+// app.get('/contact', homeController.showSignUp);
+app.get('/contact', subscribersController.getSubscriptionPage);
+app.post('/contact', homeController.postedSignUpForm);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/404.html'));
